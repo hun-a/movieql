@@ -33,3 +33,9 @@ export const deleteMovie = id => {
   }
   return false;
 }
+
+export const addMovie = (name, score) => {
+  const newMovie = { name, score, id: getMoviews().length + 1 };
+  movies.push(newMovie);
+  return newMovie;
+};
