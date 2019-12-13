@@ -1,4 +1,4 @@
-export const movies = [{
+let movies = [{
     id: 0,
     name: "Star Wars - The new one",
     score: 1
@@ -20,5 +20,16 @@ export const movies = [{
   }
 ];
 
+export const getMoviews = () => movies;
+
 export const getById = id =>
   movies.filter(movie => movie.id === id)[0];
+
+export const deleteMovie = id => {
+  const cleanedMovies = movies.filter(movie => movie.id !== id);
+  if (movies.length > cleanedMovies.length) {
+    movies = cleanedMovies;
+    return true;
+  }
+  return false;
+}

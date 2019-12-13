@@ -1,8 +1,8 @@
-import { movies, getById } from './db';
+import { getMoviews, getById, deleteMovie } from './db';
 
 const resolvers = {
   Query: {
-    movies: () => movies,
+    movies: () => getMoviews(),
     movie: (_, { id }) => getById(id)
   }
 };
